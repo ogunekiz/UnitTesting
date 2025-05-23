@@ -1,0 +1,30 @@
+ * Arrange
+Class ya da servislerin türetildiði ve eðer varsa deðerlerin set edildiði kýsým.
+
+* Act
+Metodlarýn çaðýrýldýðý ve çalýþtýrýldýðý ve sonuçlarýn yakalandýðý kýsým.
+
+* Assert
+Sonucun kontrol edildiði ve sonucun ne olmasý gerektiðinin belirtildiði kýsým.
+
+* Birden fazla parametre ile test yapabilmek için aþaðýdaki gibi Theory ve InlineData kullanýlýr.
+    [Theory]
+        [InlineData(5, 4, 9)]
+        [InlineData(0, 0, 0)]
+        [InlineData(-5, -5, -10)]
+        public void Add_ShouldAddTwoNumbers_WhenTwoNumbersAreIntegers(int a, int b, int expected)
+        {
+            //Act
+            var result = _sut.Add(a, b);
+
+            //Assers
+            Assert.Equal(expected, result);
+        }
+
+* Ignore yani testlerden birini çalýþtýrmak istemezsek `Skip="bu testi geç"` kullanýrýz.
+
+[Fact(Skip = "Þimdi deðil sonra bakýlacak")]
+  
+ * FluentAssertions ile Assert yerine Should().Be() kullanýlýr. 
+ Assert.Equal(expected, result);
+ result.Should().Be(expected);
