@@ -1,4 +1,4 @@
-* Arrange
+ * Arrange
 Class ya da servislerin türetildiði ve eðer varsa deðerlerin set edildiði kýsým.
 
 * Act
@@ -24,3 +24,7 @@ Sonucun kontrol edildiði ve sonucun ne olmasý gerektiðinin belirtildiði kýsým.
 * Ignore yani testlerden birini çalýþtýrmak istemezsek `Skip="bu testi geç"` kullanýrýz.
 
 [Fact(Skip = "Þimdi deðil sonra bakýlacak")]
+  
+ * FluentAssertions ile Assert yerine Should().Be() kullanýlýr. 
+ Assert.Equal(expected, result);
+ result.Should().Be(expected);
